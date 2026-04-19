@@ -1,0 +1,283 @@
+/* This removes default spacing and helps keep the layout consistent. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* This styles the whole page with a clean background and readable text. */
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* This container keeps content centred and prevents it from stretching too wide. */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Header styling */
+.header {
+  background: #d71920;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  position: sticky;
+  top: 0;
+}
+
+/* Logo text is made larger so it stands out. */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation links are displayed in a row on larger screens. */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* A small hover effect makes the navigation feel more interactive. */
+.nav a:hover {
+  opacity: 0.8;
+}
+
+/* This button is hidden on larger screens and shown on mobile. */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Hero section styling */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 40px 0;
+}
+
+/* This keeps the hero text aligned and readable. */
+.hero-text {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  max-width: 650px;
+}
+
+.hero-text p {
+  max-width: 550px;
+  margin-bottom: 25px;
+}
+
+/* Button styling is used for both the hero button and form buttons. */
+.btn {
+  display: inline-block;
+  background: #d71920;
+  color: white;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* This hover effect gives the buttons a more polished feel. */
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* These sections have spacing added so the page does not look cramped. */
+.booking,
+.services,
+.support {
+  padding: 70px 0;
+}
+
+.booking,
+.support {
+  background: white;
+}
+
+.services {
+  background: #eeeeee;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+  background: #fafafa;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* The trip options are placed side by side for a cleaner layout. */
+.trip-options {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+/* This grid layout helps organise the form inputs neatly. */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-grid div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels are bold so users can easily identify each field. */
+label {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+/* Input, select, and textarea styling keeps form fields consistent. */
+input,
+select,
+textarea {
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* The cards layout is used for services and support options. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* The support section only has 3 cards, so it uses a different layout. */
+.support-cards {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 30px;
+}
+
+/* Card styling keeps content separated and easy to scan. */
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card h3 {
+  color: #d71920;
+  margin-bottom: 10px;
+}
+
+/* Hover effect adds a more modern and premium feel. */
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* These message areas show validation or success messages after form submission. */
+#bookingMessage,
+#supportMessage {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #d71920;
+}
+
+/* Footer styling */
+.footer {
+  background: #1f1f1f;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .form-grid,
+  .cards,
+  .support-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* On smaller screens, the menu button appears and the nav becomes a dropdown. */
+@media (max-width: 700px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #d71920;
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .footer-box {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}

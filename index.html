@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qantas Booking Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- This is the top section of the page with the logo and navigation links. -->
+  <header class="header">
+    <div class="logo">Qantas</div>
+
+    <!-- This button is used for the mobile menu on smaller screens. -->
+    <button id="menuBtn" class="menu-btn">☰</button>
+
+    <!-- Navigation links help users move to different sections of the page. -->
+    <nav id="navMenu" class="nav">
+      <a href="#booking">Book</a>
+      <a href="#services">Services</a>
+      <a href="#support">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- The hero section is the first main area users see. -->
+    <!-- It introduces the page and encourages users to start booking. -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Book your next journey with confidence</h1>
+        <p>Search flights, manage your booking, and explore more travel services in one place.</p>
+        <a href="#booking" class="btn">Book Now</a>
+      </div>
+    </section>
+
+    <!-- This booking section is the main feature of the prototype. -->
+    <!-- It is placed near the top because booking flights is the main task. -->
+    <section class="booking" id="booking">
+      <div class="container">
+        <h2>Search Flights</h2>
+        <p>This booking form allows users to search for flights quickly and easily.</p>
+
+        <!-- This form collects the user's flight search details. -->
+        <form id="bookingForm">
+          <!-- These radio buttons let the user choose between return and one-way trips. -->
+          <div class="trip-options">
+            <label><input type="radio" name="trip" value="return" checked> Return</label>
+            <label><input type="radio" name="trip" value="oneway"> One-way</label>
+          </div>
+
+          <!-- The form-grid class is used to keep the inputs organised in rows and columns. -->
+          <div class="form-grid">
+            <div>
+              <label for="from">From</label>
+              <input type="text" id="from" placeholder="Sydney">
+            </div>
+
+            <div>
+              <label for="to">To</label>
+              <input type="text" id="to" placeholder="Melbourne">
+            </div>
+
+            <div>
+              <label for="depart">Departure Date</label>
+              <input type="date" id="depart">
+            </div>
+
+            <div>
+              <label for="returnDate">Return Date</label>
+              <input type="date" id="returnDate">
+            </div>
+
+            <div>
+              <label for="passengers">Passengers</label>
+              <input type="number" id="passengers" min="1" max="9" value="1">
+            </div>
+
+            <div>
+              <label for="travelClass">Class</label>
+              <select id="travelClass">
+                <option>Economy</option>
+                <option>Premium Economy</option>
+                <option>Business</option>
+                <option>First</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- This button submits the booking form. -->
+          <button type="submit" class="btn">Search Flights</button>
+        </form>
+
+        <!-- This paragraph is used to show feedback messages to the user. -->
+        <p id="bookingMessage"></p>
+      </div>
+    </section>
+
+    <!-- This section shows extra Qantas-style services. -->
+    <!-- Using cards makes the layout cleaner and easier to scan. -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2>More Travel Services</h2>
+        <p>These extra services make the prototype feel more realistic and similar to a real airline website.</p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Flights</h3>
+            <p>Search and compare available flights for your trip.</p>
+          </div>
+
+          <div class="card">
+            <h3>Hotels</h3>
+            <p>Browse accommodation options to match your travel plans.</p>
+          </div>
+
+          <div class="card">
+            <h3>Car Hire</h3>
+            <p>Book transport for your destination in a simple way.</p>
+          </div>
+
+          <div class="card">
+            <h3>Frequent Flyer</h3>
+            <p>Access points, rewards, and member benefits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- This support section gives users extra help after or during booking. -->
+    <section class="support" id="support">
+      <div class="container">
+        <h2>Need Help With Your Booking?</h2>
+        <p>This section gives users support options and a way to contact the airline.</p>
+
+        <div class="cards support-cards">
+          <div class="card">
+            <h3>Manage Booking</h3>
+            <p>View or update your booking details.</p>
+          </div>
+
+          <div class="card">
+            <h3>Flight Status</h3>
+            <p>Check updates for your upcoming flight.</p>
+          </div>
+
+          <div class="card">
+            <h3>Customer Support</h3>
+            <p>Get help with flights, baggage, or general questions.</p>
+          </div>
+        </div>
+
+        <!-- This form allows users to send a support enquiry. -->
+        <form id="supportForm">
+          <div class="form-grid">
+            <div>
+              <label for="name">Full Name</label>
+              <input type="text" id="name" placeholder="Michael Simiyu">
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="example@email.com">
+            </div>
+
+            <div>
+              <label for="reference">Booking Reference</label>
+              <input type="text" id="reference" placeholder="QF1234">
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn">Send Enquiry</button>
+        </form>
+
+        <!-- This will display a confirmation or error message after form submission. -->
+        <p id="supportMessage"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- The footer finishes the page and includes extra useful links. -->
+  <footer class="footer">
+    <div class="container footer-box">
+      <p>© 2026 Qantas Booking Prototype</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Help</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
